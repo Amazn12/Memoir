@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hw3</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#navBtn1").mouseover(function(){
+					$("#navBtn1").animate({top:"-10px"});
+				});
+				$("#navBtn1").mouseout(function(){
+					$("#navBtn1").animate({top:"0px"});
+				});
+				$("#navBtn2").mouseover(function(){
+					$("#navBtn2").animate({top:"-10px"});
+				});
+				$("#navBtn2").mouseout(function(){
+					$("#navBtn2").animate({top:"0px"});
+				});
+				$("#navBtn3").mouseover(function(){
+					$("#navBtn3").animate({top:"-10px"});
+				});
+				$("#navBtn3").mouseout(function(){
+					$("#navBtn3").animate({top:"0px"});
+				});
+				$("#navBtn4").mouseover(function(){
+					$("#navBtn4").animate({top:"-10px"});
+				});
+				$("#navBtn4").mouseout(function(){
+					$("#navBtn4").animate({top:"0px"});
+				});
+			});
+		
+		</script>
+	</head>
+	<body>
+		<img id="banner" alt="Cover" src="memoir.png"/>
+		<nav>
+			<a href="index.html"><img style="position:relative" id="navBtn1" src="home.png" alt="home"/></a>
+			<a href="play.html"><img style="position:relative" id="navBtn2" src="play.png" alt="play"/></a>
+			<a href="rec.html"><img style="position:relative" id="navBtn3" src="record.png" alt="record"/></a>
+			<a href="about.html"><img style="position:relative" id="navBtn4" src="about.png" alt="about"/></a>
+		</nav>
+		<div class="content">
+			<article>
+				<h3 id="title">HW3</h3>
+				<img class="pic" alt="ramen" src="ramen.png"/>
+				<audio controls>
+				  <source src="Lightning.mp3" type="audio/mpeg">
+				</audio>
+
+				<p>My application will be using both one's visual and audio senses to track memories. Both photographs and music elicits emotions and help trigger memories and past events. 
+				Music often brings nostalgia and specific emotions that one felt during a specific time frame.
+				The system will therefore let the user upload both one image and one audio clip everyday. 
+				The image can be a photograph that the user took that day or an image found online that reminds them of that specific day. 
+				The audio clip can either be a song that they just found that day or one that they listened to a lot during the day. 
+				With images and audio clips uploaded, the user can then review the past days by flip through each day similar to a blog or an album book. It will be like listening to the soundtrack of one's life. 
+				</p>
+				
+			</article>
+			<footer>
+					January 29, 2014 | Li-Chang Wang | lw6gk@virginia.edu
+			</footer>
+		</div>
+	</body>
+</html>

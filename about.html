@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hw3</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script>
+			$(document).ready(function(){
+				$( "#datepicker" ).datepicker();
+				$(document).tooltip();
+				$("#navBtn1").mouseover(function(){
+					$("#navBtn1").animate({top:"-10px"});
+				});
+				$("#navBtn1").mouseout(function(){
+					$("#navBtn1").animate({top:"0px"});
+				});
+				$("#navBtn2").mouseover(function(){
+					$("#navBtn2").animate({top:"-10px"});
+				});
+				$("#navBtn2").mouseout(function(){
+					$("#navBtn2").animate({top:"0px"});
+				});
+				$("#navBtn3").mouseover(function(){
+					$("#navBtn3").animate({top:"-10px"});
+				});
+				$("#navBtn3").mouseout(function(){
+					$("#navBtn3").animate({top:"0px"});
+				});
+				$("#navBtn4").mouseover(function(){
+					$("#navBtn4").animate({top:"-10px"});
+				});
+				$("#navBtn4").mouseout(function(){
+					$("#navBtn4").animate({top:"0px"});
+				});
+				
+				$("#showusers").click(function(){
+					$.ajax({
+						url: "getUsers.php",
+						data: "", //what you want to pass, key value pairs
+						success: function(data){
+							$("#userTable").html(data);
+						}
+						//you can put...if there's a failure...if no internet connection
+						//other things you can put
+					});
+				
+				});
+				
+				$("#editusers").click(function(){
+					$("#editing").toggle();
+				
+				});
+				$("#submitedit").click(function(){
+					$.ajax({
+						url: "getUsers.php",
+						data: {username:$("#username").val()}, 
+						success: function(data){
+							$("#userTable").html(data);
+						}
+						//you can put...if there's a failure...if no internet connection
+						//other things you can put
+					});
+				});
+				
+				
+			});
+		
+		</script>
+	</head>
+	<body>
+		<img id="banner" alt="Cover" src="memoir.png"/>
+		
+		<nav>
+			<a href="index.html"><img style="position:relative" id="navBtn1" src="home.png" alt="home"/></a>
+			<a href="play.html"><img style="position:relative" id="navBtn2" src="play.png" alt="play"/></a>
+			<a href="rec.html"><img style="position:relative" id="navBtn3" src="record.png" alt="record"/></a>
+			<a href="about.html"><img style="position:relative" id="navBtn4" src="about.png" alt="about"/></a>
+		</nav>
+		<div class="content">
+			<article>
+				<h3 id="title">ABOUT</h3>
+				<h4> User Sign In Form </h4>
+				
+				
+				<form action="guest.php" method="post">
+					First Name: <input type="text" name="firstName" id="firstName" title="Your first name"><br><br>
+					Last Name: <input type="text" name="lastName" id="lastName" title="Your last name"><br><br>
+					Username: <input type="text" name="username" id="username" title="Your username, this can be changed later"><br><br>
+					Gender: <select name="gender" id="gender">
+						<option value="Female">Female</option>
+						<option value="Male">Male</option>
+					</select><br><br>
+					Birthday: <input type="text" name="birthday" id="birthday" title="When is your birthday?"><br><br>
+					Date: <input type="text" name="date" id="datepicker" title="Today's date"><br><br>
+					
+					<input id="submit" type="submit">
+				</form>
+				<br>
+				<div id="split">-------------------------------------------------</div>
+				<div id="usersdiv"><button id="showusers">Show Users</button>   <button id="editusers">Edit your username</button></div>
+				<br>
+				<div id="userTable"></div>
+				
+				<div id="editing">
+					<br>
+					<form action="editUsers.php" method="post">
+						Type in your first and last name and update your username.
+						<br>
+						<br>
+						First Name: <input type="text" name="firstName1" id="firstName1" title="Your first name"><br><br>
+						Last Name: <input type="text" name="lastName1" id="lastName1" title="Your last name"><br><br>
+						Username: <input type="text" name="username1" id="username1" title="Change to this username"><br><br>
+						<input id="submitedit" type="submit">
+					</form>
+				</div>
+			</article>
+			<footer>
+					January 29, 2014 | Li-Chang Wang | lw6gk@virginia.edu
+			</footer>
+		</div>
+	</body>
+</html>

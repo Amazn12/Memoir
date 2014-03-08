@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hw3</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script>
+			$(document).ready(function(){
+				$( "#datepicker" ).datepicker();
+				$(document).tooltip();
+				$("#navBtn1").mouseover(function(){
+					$("#navBtn1").animate({top:"-10px"});
+				});
+				$("#navBtn1").mouseout(function(){
+					$("#navBtn1").animate({top:"0px"});
+				});
+				$("#navBtn2").mouseover(function(){
+					$("#navBtn2").animate({top:"-10px"});
+				});
+				$("#navBtn2").mouseout(function(){
+					$("#navBtn2").animate({top:"0px"});
+				});
+				$("#navBtn3").mouseover(function(){
+					$("#navBtn3").animate({top:"-10px"});
+				});
+				$("#navBtn3").mouseout(function(){
+					$("#navBtn3").animate({top:"0px"});
+				});
+				$("#navBtn4").mouseover(function(){
+					$("#navBtn4").animate({top:"-10px"});
+				});
+				$("#navBtn4").mouseout(function(){
+					$("#navBtn4").animate({top:"0px"});
+				});
+			});
+		
+		</script>
+	</head>
+	<body>
+		<img id="banner" alt="Cover" src="memoir.png"/>
+		
+		<nav>
+			<a href="index.html"><img style="position:relative" id="navBtn1" src="home.png" alt="home"/></a>
+			<a href="play.html"><img style="position:relative" id="navBtn2" src="play.png" alt="play"/></a>
+			<a href="rec.html"><img style="position:relative" id="navBtn3" src="record.png" alt="record"/></a>
+			<a href="about.html"><img style="position:relative" id="navBtn4" src="about.png" alt="about"/></a>
+		</nav>
+		<div class="content">
+			<article>
+				<h3 id="title">RECORD</h3>
+				<form action="recorded.php" method="post" enctype="multipart/form-data">
+					Title: <input type="text" name="title" title="Title for your memory"><br><br>
+					Date: <input type="text" name="date" id="datepicker" title="Today's date"><br><br>
+					Mood: <select name="mood" title="How do you feel today?">
+						<option value="happy">Happy</option>
+						<option value="sad">Sad</option>
+						<option value="excited">Excited</option>
+						<option value="angry">Angry</option>
+						<option value="bored">Bored</option>
+						<option value="calm">Calm</option>
+					</select><br><br>
+					Audio: <input type="file" name="audio" id="audio" title="Upload an audio file that describes today"><br><br>
+					Image: <input type="file" name="image" id="image" title="Upload an image file that describes today"><br><br>
+					Description: <br><textarea rows="4" cols="50" name="descrip"></textarea> <br>
+					
+					<input type="submit">
+				</form>
+				
+			</article>
+			<footer>
+					January 29, 2014 | Li-Chang Wang | lw6gk@virginia.edu
+			</footer>
+		</div>
+	</body>
+</html>

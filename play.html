@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hw3</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#navBtn1").mouseover(function(){
+					$("#navBtn1").animate({top:"-10px"});
+				});
+				$("#navBtn1").mouseout(function(){
+					$("#navBtn1").animate({top:"0px"});
+				});
+				$("#navBtn2").mouseover(function(){
+					$("#navBtn2").animate({top:"-10px"});
+				});
+				$("#navBtn2").mouseout(function(){
+					$("#navBtn2").animate({top:"0px"});
+				});
+				$("#navBtn3").mouseover(function(){
+					$("#navBtn3").animate({top:"-10px"});
+				});
+				$("#navBtn3").mouseout(function(){
+					$("#navBtn3").animate({top:"0px"});
+				});
+				$("#navBtn4").mouseover(function(){
+					$("#navBtn4").animate({top:"-10px"});
+				});
+				$("#navBtn4").mouseout(function(){
+					$("#navBtn4").animate({top:"0px"});
+				});
+				
+				$("#submit").click(function(){
+					$.ajax({
+						url: "getEntries.php",
+						data: {month:$("#month").val()}, //what you want to pass, key value pairs
+						success: function(data){
+							$("#entryTable").html(data);
+						}
+						//you can put...if there's a failure...if no internet connection
+						//other things you can put
+					});
+				});
+			});
+		
+		</script>
+	</head>
+	<body>
+		<img id="banner" alt="Cover" src="memoir.png"/>
+		
+		<nav>
+			<a href="index.html"><img style="position:relative" id="navBtn1" src="home.png" alt="home"/></a>
+			<a href="play.html"><img style="position:relative" id="navBtn2" src="play.png" alt="play"/></a>
+			<a href="rec.html"><img style="position:relative" id="navBtn3" src="record.png" alt="record"/></a>
+			<a href="about.html"><img style="position:relative" id="navBtn4" src="about.png" alt="about"/></a>
+		</nav>
+		<div class="content">
+			<article>
+				<h3 id="title">PLAY</h3>
+				Month of the entries: <select id="month" name="month"> 
+					<option value="January">January</option>
+					<option value="February">February</option>
+					<option value="March">March</option>
+					<option value="April">April</option>
+					<option value="May">May</option>
+					<option value="June">June</option>
+					<option value="July">July</option>
+					<option value="August">August</option>
+					<option value="September">September</option>
+					<option value="October">October</option>
+					<option value="November">November</option>
+					<option value="December">December</option>
+					
+				</select>
+				<input id="submit" type="submit">
+				<br>
+				<br>
+				<!--we need a place to put the table-->
+				<div id="entryTable"></div>
+		
+				
+				
+			</article>
+			<footer>
+					January 29, 2014 | Li-Chang Wang | lw6gk@virginia.edu
+			</footer>
+		</div>
+	</body>
+</html>
